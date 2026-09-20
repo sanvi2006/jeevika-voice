@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeevika | Voice livelihood mapping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">J</span><span>Jeevika</span></div>
+        <div class="status" data-i18n="status">Agent online</div>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow" data-i18n="eyebrow">Voice-based livelihood mapping</p>
+        <h1><span data-i18n="headline">Tell us what you do.</span><br /><em data-i18n="headlineAccent">We’ll map what comes next.</em></h1>
+        <p class="lede" data-i18n="lede">Speak naturally in your language. Jeevika understands your work, confirms what it heard, and finds practical skilling pathways.</p>
+      </section>
+
+      <section class="workspace">
+        <div class="conversation-panel">
+          <div class="panel-heading"><span>01</span><h2 data-i18n="yourStory">Your story</h2></div>
+          <div id="messages" class="messages" aria-live="polite">
+            <div class="message agent"><span class="avatar">J</span><div><p data-i18n="welcomeQuestion">Hello. What kind of work do you do, and how long have you been doing it?</p><small data-i18n="readyToListen">Jeevika · ready to listen</small></div></div>
+          </div>
+          <form id="chat-form" class="composer">
+            <textarea id="message-input" rows="3" placeholder="Type your answer, or use the microphone..."></textarea>
+            <div class="composer-actions"><select id="language" aria-label="Response language"><option>English</option><option>Hindi</option><option>Kannada</option><option>Telugu</option><option>Tamil</option><option>Marathi</option></select><button type="button" id="mic-button" class="icon-button" title="Use voice input" aria-label="Use voice input">●</button><button type="submit" class="send-button"><span data-i18n="sendStory">Send story</span> <span>↗</span></button></div>
+          </form>
+          <p id="voice-status" class="voice-status" data-i18n="voicePrivate">Your voice is private to this browser session.</p>
+        </div>
+
+        <aside class="profile-panel">
+          <div class="panel-heading"><span>02</span><h2 data-i18n="skillMap">Skill map</h2></div>
+          <div id="profile-empty" class="empty-state"><div class="signal">⌁</div><p data-i18n="profileEmpty">Your mapped profile and recommendations will appear here after the first conversation.</p></div>
+          <div id="profile-content" class="profile-content hidden">
+            <div class="profile-card"><p class="label" data-i18n="understoodAs">UNDERSTOOD AS</p><h3 id="occupation">—</h3><p id="experience">—</p><div class="tags" id="skills"></div></div>
+            <div class="profile-section"><p class="label" data-i18n="mappedAreas">MAPPED SKILL AREAS</p><div id="categories" class="category-list"></div></div>
+            <div class="profile-section"><p class="label" data-i18n="recommendedPathways">RECOMMENDED PATHWAYS</p><div id="recommendations" class="recommendations"></div></div>
+          </div>
+        </aside>
+      </section>
+      <footer><span data-i18n="footerAudience">Designed for rural workers and community facilitators</span><span data-i18n="footerBuilt">Built with Gemini · NSQF-aligned mapping</span></footer>
+    </main>
+    <script src="/static/app.js?v=voice-fallback-2"></script>
+  </body>
+</html>
